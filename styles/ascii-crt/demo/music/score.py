@@ -301,6 +301,7 @@ mix = sosfilt(butter(2, 9500, 'low', fs=SR, output='sos'), mix, axis=0)
 mix *= (mask > 0)[:, None]   # 滤波振铃也清零：静音段保持数字静音
 pk = np.abs(mix).max(); sc = 10 ** (-1.5 / 20) / pk
 mix *= sc
+os.makedirs(os.path.join(D, 'stems'), exist_ok=True)
 for k in stems:
     sf.write(os.path.join(D, 'stems', k + '.wav'), (stems[k] * G[k] * sc).astype(np.float32), SR)
 sf.write(os.path.join(D, 'score.wav'), mix.astype(np.float32), SR)

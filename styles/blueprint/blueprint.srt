@@ -19,5 +19,5 @@ So, I issued a revision.
 It rained on the drawing. I'm told drawings don't do that.
 
 6
-00:00:40,700 --> 00:00:43,513
+00:00:40,700 --> 00:00:43,512
 Status: works. Slightly damp.
